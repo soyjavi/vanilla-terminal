@@ -1,0 +1,28 @@
+{
+  "name": "vanilla-terminal",
+  "version": "0.0.1",
+  "description": "🍦A simple and lightweight Javascript web browser terminal",
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^7.1.0",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^0.27.3",
+    "eslint": "^4.19.0",
+    "eslint-config-airbnb": "latest",
+    "eslint-plugin-import": "^2.13.0",
+    "jest": "23.4.2",
+    "release-it": "^7.4.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.6"
+  },
+  "scripts": {
+    "build": "webpack",
+    "start": "node index.js",
+    "test": "jest",
+    "lint": "eslint src/**",
+    "release": "release-it"
+  }
+}

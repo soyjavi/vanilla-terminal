@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb/base",
+  "parser": "babel-eslint",
+  "globals": {
+    "document": true,
+    "webpack": true,
+    "window": true
+  },
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "global-require": "off",
+    "max-len": [1, 120, { "tabWidth": 2, "ignoreComments": true }]
+  },
+}

@@ -1,0 +1,13 @@
+{
+  "non-interactive": true,
+  "increment": "patch",
+  "requireCleanWorkingDir": true,
+  "buildCommand": "yarn run test",
+  "src": {
+    "beforeStartCommand": "yarn run lint",
+    "afterReleaseCommand": "echo Successfully released ${version} to ${dist.repo}.",
+    "commitMessage": "Release v%s",
+    "tagName": "v%s",
+    "tagAnnotation": "Release v%s"
+  }
+}

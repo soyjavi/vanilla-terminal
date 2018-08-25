@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
+.vanillaTerm {
+  background-color: black;
+  font-family: "Inconsolata", "Courier New", Courier, monospace;
+  overflow: hidden;
+  padding: 0.25vh;
+}
