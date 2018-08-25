@@ -11,7 +11,7 @@ class Terminal {
     const {
       container = 'vanilla-terminal',
       commands = {},
-      welcome = '',
+      welcome = 'Welcome to Vanilla terminal.',
       prompt = '',
       separator = '&gt;',
     } = props;
@@ -25,8 +25,8 @@ class Terminal {
     const el = document.getElementById(container);
     if (el) {
       this.cacheDOM(el);
-      if (welcome) this.output(welcome);
       this.addListeners();
+      if (welcome) this.output(welcome);
     } else throw Error(`Container #${container} doesn't exists.`);
   }
 
@@ -106,10 +106,10 @@ class Terminal {
 
     if (command) {
       const { commands = {} } = this;
-      const program = commands[command];
-      if (!program) this.output(`${command}: command not found.`);
+      const callback = commands[command];
+      if (!callback) this.output(`${command}: command not found.`);
       else {
-        if (program.run) program.run(this);
+        if (callback) callback(this);
         onInputCallback(command, parameters);
       }
     }

@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: ['babel-polyfill', './src/VanillaTerminal.js'],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -22,7 +22,7 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: ['env'],
-          plugins: ['transform-class-properties']
+          plugins: ['transform-class-properties'],
         },
       },
     ],

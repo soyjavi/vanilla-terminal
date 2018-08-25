@@ -37,6 +37,7 @@
 
   .VanillaTerm .prompt {
     color: #F3E5AB;
+    justify-content: center;
     margin-right: 0.5em;
     white-space: nowrap;
   }
