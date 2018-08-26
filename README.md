@@ -1,5 +1,6 @@
 # vanilla-terminal
-[![Build Status](http://img.shields.io/travis/soyjavi/vanilla-terminal/master.svg?style=flat-square)](https://travis-ci.org/soyjavi/vanilla-terminal) [![devDependency Status](https://img.shields.io/david/soyjavi/vanilla-terminal.svg?style=flat-square)](https://david-dm.org/soyjavi/vanilla-terminal#info=dependencies) [![npm](https://img.shields.io/npm/l/botkit.svg?style=flat-square)](https://spdx.org/licenses/MIT)
+[![NPM version][npm-image]][npm-url]
+[![Build Status](http://img.shields.io/travis/soyjavi/vanilla-terminal/master.svg?style=flat-square)](https://travis-ci.org/soyjavi/vanilla-terminal) [![dependencies Status](https://david-dm.org/soyjavi/vanilla-terminal/status.svg?style=flat-square)](https://david-dm.org/soyjavi/vanilla-terminal) [![devDependencies Status](https://david-dm.org/soyjavi/vanilla-terminal/dev-status.svg?style=flat-square)](https://david-dm.org/soyjavi/vanilla-terminal?type=dev) [![npm](https://img.shields.io/npm/l/botkit.svg?style=flat-square)](https://spdx.org/licenses/MIT)
 
 > 🍦A simple and lightweight Javascript web browser terminal
 
