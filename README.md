@@ -1,7 +1,7 @@
 # vanilla-terminal
 🍦A simple and lightweight Javascript web browser terminal
 
-[Imgur](https://i.imgur.com/0KwSRp6.gifv)
+<img src='https://i.imgur.com/0KwSRp6.gif' center width='600'>
 
 Web apps are great. But sometimes instead of all the double-clicks, mouse pointers, taps and swipes across the screen - you just want good old keyboard input. This terminal runs in a browser, desktop or mobile. It provides a simple and easy way to extend the terminal with your own commands.
 
