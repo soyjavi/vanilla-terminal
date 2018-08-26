@@ -11,6 +11,9 @@ module.exports = {
     'text',
     'html',
   ],
+  moduleNameMapper: {
+    '\\.(css|jpg|png)$': 'identity-obj-proxy',
+  },
   testPathIgnorePatterns: [
     '/node_modules',
   ],
