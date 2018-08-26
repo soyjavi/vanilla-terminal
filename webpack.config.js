@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: ['babel-polyfill', './src/VanillaTerminal.js'],
   output: {
     path: path.join(__dirname, 'dist'),
