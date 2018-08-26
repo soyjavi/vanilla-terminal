@@ -4,51 +4,60 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.VanillaTerm ::selection {
-  background-color: #0080ff;
-  text-shadow: none !important;
-}
-
-.VanillaTerm .container {
+.VanillaTerm {
   background-color: #222222;
   color: white;
   font-family: "Inconsolata", "Courier New", Courier, monospace;
   font-weight: bold;
   overflow: hidden;
-  padding: 1em;
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
+  padding: 0.75em 1em;
 }
 
-  .VanillaTerm output {
-    clear: both;
+  .VanillaTerm .container {
     width: 100%;
+    height: 100%;
+    overflow-y: scroll;
   }
-    .VanillaTerm output pre {
-      margin: 0;
+    .VanillaTerm .container ::selection {
+      background-color: #f3e5ab;
+      text-shadow: none !important;
     }
 
-    .VanillaTerm output span {
-      display: block;
-      font-weight: normal;
-      opacity: 0.75;
+    .VanillaTerm output {
+      clear: both;
+      line-height: 1.25em;
+      width: 100%;
+    }
+      .VanillaTerm output pre {
+        margin: 0;
+      }
+      .VanillaTerm output span {
+        display: block;
+        font-weight: normal;
+        color: #dddddd;
+      }
+
+    .VanillaTerm .prompt, .VanillaTerm a {
+      color: #f3e5ab;
+      font-weight: bold;
     }
 
-  .VanillaTerm .prompt {
-    color: #F3E5AB;
-    justify-content: center;
-    margin-right: 0.5em;
-    white-space: nowrap;
-  }
+    .VanillaTerm .prompt {
+      color: #f3e5ab;
+      line-height: 1.25em;
+      margin-right: 0.5em;
+    }
 
-  .VanillaTerm .input {
-    background-color: transparent;
-    border: none;
-    color: inherit;
-    font: inherit;
-    margin: 0;
-    padding: 0;
-    outline: none;
-    width: 100%;
-  }
+    .VanillaTerm .command {
+      display: flex;
+    }
+      .VanillaTerm .command .input {
+        background-color: transparent;
+        border: none;
+        color: inherit;
+        font: inherit;
+        flex: 1;
+        margin: 0;
+        outline: none;
+        padding: 0;
+      }

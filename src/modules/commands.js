@@ -1,4 +1,4 @@
-import PKG from '../package.json';
+import PKG from '../../package.json';
 
 const { localStorage } = window;
 const KEY = 'VanillaTerm';
@@ -7,8 +7,7 @@ export default {
   clear: terminal => terminal.clear(),
 
   help: (terminal) => {
-    terminal.output(`Vanilla Terminal bash, version ${PKG.version}`);
-    terminal.output('These shell commands are defined internally.  Type <i>help</i> to see this list.');
+    terminal.output('These shell commands are defined internally:');
     terminal.output(Object.keys(terminal.commands).join(', '));
   },
 

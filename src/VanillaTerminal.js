@@ -1,5 +1,4 @@
-import INTERNAL_COMMANDS from './commands';
-import template from './template';
+import { COMMANDS, markup } from './modules';
 import style from './VanillaTerminal.css'; // eslint-disable-line
 
 const KEY = 'VanillaTerm';
@@ -11,11 +10,11 @@ class Terminal {
     const {
       container = 'vanilla-terminal',
       commands = {},
-      welcome = 'Welcome to Vanilla terminal.',
+      welcome = 'Welcome to <a href="">Vanilla</a> terminal.',
       prompt = '',
       separator = '&gt;',
     } = props;
-    this.commands = Object.assign({}, commands, INTERNAL_COMMANDS);
+    this.commands = Object.assign({}, commands, COMMANDS);
     this.history = localStorage[KEY] ? JSON.parse(localStorage[KEY]) : [];
     this.historyCursor = this.history.length;
     this.welcome = welcome;
@@ -32,7 +31,7 @@ class Terminal {
 
   cacheDOM = (el) => {
     el.classList.add(KEY);
-    el.insertAdjacentHTML('beforeEnd', template(this));
+    el.insertAdjacentHTML('beforeEnd', markup(this));
 
     // Cache DOM nodes
     const container = el.querySelector('.container');
