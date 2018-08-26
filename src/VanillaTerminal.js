@@ -48,7 +48,7 @@ class Terminal {
   addListeners = () => {
     const { DOM } = this;
     DOM.output.addEventListener('DOMSubtreeModified', () => {
-      setTimeout(() => DOM.command.scrollIntoView(), 10);
+      setTimeout(() => DOM.input.scrollIntoView(), 10);
     }, false);
 
 
@@ -107,7 +107,7 @@ class Terminal {
     if (command) {
       const { commands = {} } = this;
       const callback = commands[command];
-      if (!callback) this.output(`${command}: command not found.`);
+      if (!callback) this.output(`<u>${command}</u>: command not found.`);
       else {
         if (callback) callback(this);
         onInputCallback(command, parameters);
@@ -127,7 +127,7 @@ class Terminal {
 
   output(html = '&nbsp;') {
     this.DOM.output.insertAdjacentHTML('beforeEnd', `<span>${html}</span>`);
-    this.DOM.input.scrollIntoView();
+    if (this.DOM.input.scrollIntoView) this.DOM.input.scrollIntoView();
   }
 
   setPrompt(prompt) {
