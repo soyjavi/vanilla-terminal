@@ -1,6 +1,8 @@
 # vanilla-terminal
 🍦A simple and lightweight Javascript web browser terminal
 
+[![Build Status](http://img.shields.io/travis/soyjavi/vanilla-terminal/master.svg?style=flat-square)](https://travis-ci.org/soyjavi/vanilla-terminal) [![devDependency Status](https://img.shields.io/david/soyjavi/vanilla-terminal.svg?style=flat-square)](https://david-dm.org/soyjavi/vanilla-terminal#info=dependencies) [![npm](https://img.shields.io/npm/l/botkit.svg?style=flat-square)](https://spdx.org/licenses/MIT)
+
 <img src='https://i.imgur.com/0KwSRp6.gif' center width='600'>
 
 Web apps are great. But sometimes instead of all the double-clicks, mouse pointers, taps and swipes across the screen - you just want good old keyboard input. This terminal runs in a browser, desktop or mobile. It provides a simple and easy way to extend the terminal with your own commands.
@@ -50,12 +52,26 @@ const terminal = new VanillaTerminal({ commands });
 
 Now in your terminal could type your new commands:
 
-```
-**> help**
+```bash
+> help
 These shell commands are defined internally:
 flavour, ping, clear, help, version, wipe
 
-**> flavour**
-There is only one flavour for your favorite🍦and it is **vanilla**.
-**@soyjavi ❤️ vanilla >**
+> flavour
+There is only one flavour for your favorite🍦and it is vanilla.
+@soyjavi ❤️ vanilla >
 ```
+
+
+
+
+
+## License
+
+Copyright (c) 2018 Javier Jimenez Villar
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
