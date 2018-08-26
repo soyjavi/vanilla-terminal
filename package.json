@@ -1,6 +1,6 @@
 {
   "name": "vanilla-terminal",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "🍦A simple and lightweight Javascript web browser terminal",
   "devDependencies": {
     "babel-eslint": "^8.2.6",
