@@ -1,9 +1,9 @@
 # vanilla-terminal
-🍦A simple and lightweight Javascript web browser terminal
-
 [![Build Status](http://img.shields.io/travis/soyjavi/vanilla-terminal/master.svg?style=flat-square)](https://travis-ci.org/soyjavi/vanilla-terminal) [![devDependency Status](https://img.shields.io/david/soyjavi/vanilla-terminal.svg?style=flat-square)](https://david-dm.org/soyjavi/vanilla-terminal#info=dependencies) [![npm](https://img.shields.io/npm/l/botkit.svg?style=flat-square)](https://spdx.org/licenses/MIT)
 
-<img src='https://i.imgur.com/0KwSRp6.gif' center width='600'>
+> 🍦A simple and lightweight Javascript web browser terminal
+
+<img src='https://i.imgur.com/0KwSRp6.gif' />
 
 Web apps are great. But sometimes instead of all the double-clicks, mouse pointers, taps and swipes across the screen - you just want good old keyboard input. This terminal runs in a browser, desktop or mobile. It provides a simple and easy way to extend the terminal with your own commands.
 
