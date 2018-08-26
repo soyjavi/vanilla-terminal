@@ -2,6 +2,22 @@
   "name": "vanilla-terminal",
   "version": "0.0.3",
   "description": "🍦A simple and lightweight Javascript web browser terminal",
+  "keywords": [
+    "terminal",
+    "console",
+    "xterm",
+    "shell",
+    "tool"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soyjavi/vanilla-terminal.git"
+  },
+  "license": "MIT",
+  "main": "./dist/vanilla-terminal.js",
+  "bin": "./dist/vanilla-terminal.js",
+  "homepage": "https://github.com/soyjavi/vanilla-terminal",
+  "bugs": "https://github.com/soyjavi/vanilla-terminal/issues",
   "devDependencies": {
     "babel-eslint": "^8.2.6",
     "babel-jest": "^23.4.2",
@@ -20,7 +36,6 @@
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.6"
   },
-  "main": "./dist/vanilla-terminal.js",
   "scripts": {
     "build": "webpack",
     "start": "node index.js",
