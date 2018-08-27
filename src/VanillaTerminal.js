@@ -102,7 +102,7 @@ class Terminal {
     if (Object.keys(commands).includes(command)) {
       const callback = commands[command];
       if (callback) callback(this, parameters);
-      onInputCallback(command, parameters);
+      if (onInputCallback) onInputCallback(command, parameters);
     } else {
       this.output(`<u>${command}</u>: command not found.`);
     }
@@ -114,7 +114,7 @@ class Terminal {
   }
 
   onInput(callback) {
-    if (callback) this.onInputCallback = callback;
+    this.onInputCallback = callback;
   }
 
   output(html = '&nbsp;') {
