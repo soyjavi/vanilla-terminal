@@ -1,4 +1,4 @@
-import { COMMANDS, markup } from './modules';
+import { cloneCommandNode, COMMANDS, markup } from './modules';
 import style from './VanillaTerminal.css'; // eslint-disable-line
 
 const KEY = 'VanillaTerm';
@@ -50,7 +50,6 @@ class Terminal {
       setTimeout(() => DOM.input.scrollIntoView(), 10);
     }, false);
 
-
     addEventListener('click', () => DOM.input.focus(), false);
     DOM.output.addEventListener('click', event => event.stopPropagation(), false);
     DOM.input.addEventListener('keyup', this.onKeyUp, false);
@@ -81,38 +80,32 @@ class Terminal {
   }
 
   onKeyDown = ({ keyCode }) => {
-    const { DOM, history, onInputCallback } = this;
-    const value = DOM.input.value.trim();
+    const {
+      commands = {}, DOM, history, onInputCallback,
+    } = this;
+    const commandLine = DOM.input.value.trim();
+    if (keyCode !== 13 || !commandLine) return;
 
-    if (keyCode !== 13 || !value) return;
-
-    const [command, ...parameters] = value.split(' ');
-
-    // Save query in history
-    history.push(value);
+    // Save command line in history
+    history.push(commandLine);
     localStorage[KEY] = JSON.stringify(history);
     this.historyCursor = history.length;
 
-    // Duplicate current input and append to output section.
-    const line = DOM.command.cloneNode(true);
-    line.classList.add('line');
-    const input = line.querySelector('.input');
-    input.autofocus = false;
-    input.readOnly = true;
-    input.insertAdjacentHTML('beforebegin', input.value);
-    input.parentNode.removeChild(input);
-    DOM.output.appendChild(line);
+    // Clone command as a new output line
+    DOM.output.appendChild(cloneCommandNode(DOM.command));
 
-    if (command) {
-      const { commands = {} } = this;
-      const callback = commands[command];
-      if (!callback) this.output(`<u>${command}</u>: command not found.`);
-      else {
-        if (callback) callback(this);
-        onInputCallback(command, parameters);
-      }
-    }
+    // Clean command line
     DOM.input.value = '';
+
+    // Dispatch command
+    const [command, ...parameters] = commandLine.split(' ');
+    if (Object.keys(commands).includes(command)) {
+      const callback = commands[command];
+      if (callback) callback(this, parameters);
+      onInputCallback(command, parameters);
+    } else {
+      this.output(`<u>${command}</u>: command not found.`);
+    }
   }
 
   clear() {
