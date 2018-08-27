@@ -46,8 +46,8 @@ const commands = {
     instance.setPrompt('@soyjavi <small>❤️</small> <u>vanilla</u> ');
   },
 
-  ping: (instance, arguments) => {
-    instance.output('Ping to <u>${arguments[0]}</u>...');
+  ping: (instance, parameters) => {
+    instance.output('Ping to <u>${parameters[0]}</u>...');
   },
 };
 
@@ -65,10 +65,6 @@ flavour, ping, clear, help, version, wipe
 There is only one flavour for your favorite🍦and it is vanilla.
 @soyjavi ❤️ vanilla >
 ```
-
-
-
-
 
 ## License
 

@@ -1,4 +1,5 @@
 import PKG from '../../package.json';
+import HELP from './help';
 
 const { localStorage } = window;
 const KEY = 'VanillaTerm';
@@ -6,9 +7,14 @@ const KEY = 'VanillaTerm';
 export default {
   clear: terminal => terminal.clear(),
 
-  help: (terminal) => {
-    terminal.output('These shell commands are defined internally:');
-    terminal.output(Object.keys(terminal.commands).join(', '));
+  help: (terminal, [command]) => {
+    if (command) {
+      terminal.output(`help: ${HELP[command] || `no help topics match <u>${command}</u>`}`);
+    } else {
+      terminal.output('These shell commands are defined internally. Type <u>help</u> for see the list.');
+      terminal.output('Type <u>help name</u> to find out more about the function <u>name</u>.');
+      terminal.output(Object.keys(terminal.commands).join(', '));
+    }
   },
 
   version: terminal => terminal.output(`Vanilla Terminal v${PKG.version}`),
