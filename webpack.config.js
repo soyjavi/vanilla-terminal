@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'vanilla-terminal.js',
+    libraryTarget: 'umd',
   },
   module: {
     rules: [
