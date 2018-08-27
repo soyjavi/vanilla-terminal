@@ -10,9 +10,7 @@
     "tagName": "v%s",
     "tagAnnotation": "Release v%s"
   },
-  "dist": {
-    "npm": {
-      "publish": true
-    }
+  "npm": {
+    "publish": true
   }
 }
