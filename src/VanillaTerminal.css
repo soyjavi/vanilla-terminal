@@ -51,6 +51,15 @@
     .VanillaTerm .command {
       display: flex;
     }
+
+      .VanillaTerm .command.hidden .prompt {
+        display: none;
+      }
+
+      .VanillaTerm .command.hidden .input {
+        max-width: 1px;
+      }
+
       .VanillaTerm .command .input {
         background-color: transparent;
         border: none;

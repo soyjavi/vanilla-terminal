@@ -95,6 +95,7 @@ class Terminal {
     DOM.output.appendChild(cloneCommandNode(DOM.command));
 
     // Clean command line
+    DOM.command.classList.add('hidden');
     DOM.input.value = '';
 
     // Dispatch command
@@ -108,9 +109,18 @@ class Terminal {
     }
   }
 
+  resetCommand = () => {
+    const { DOM } = this;
+
+    DOM.input.value = '';
+    DOM.command.classList.remove('hidden');
+    if (DOM.input.scrollIntoView) DOM.input.scrollIntoView();
+  }
+
+
   clear() {
     this.DOM.output.innerHTML = '';
-    this.DOM.input.value = '';
+    this.resetCommand();
   }
 
   onInput(callback) {
@@ -119,7 +129,7 @@ class Terminal {
 
   output(html = '&nbsp;') {
     this.DOM.output.insertAdjacentHTML('beforeEnd', `<span>${html}</span>`);
-    if (this.DOM.input.scrollIntoView) this.DOM.input.scrollIntoView();
+    this.resetCommand();
   }
 
   setPrompt(prompt) {
