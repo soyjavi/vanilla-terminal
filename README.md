@@ -7,7 +7,7 @@
 
 > 🍦A simple and lightweight Javascript web browser terminal
 
-<img src='https://i.imgur.com/0KwSRp6.gif' />
+<img src='https://i.imgur.com/yRtb73J.gif' />
 
 Web apps are great. But sometimes instead of all the double-clicks, mouse pointers, taps and swipes across the screen - you just want good old keyboard input. This terminal runs in a browser, desktop or mobile. It provides a simple and easy way to extend the terminal with your own commands.
 
@@ -68,13 +68,13 @@ There is only one flavour for your favorite🍦and it is vanilla.
 
 ## Methods
 
-### `clear`
+### clear
 
 ```js
 terminal.clear();
 ```
 
-### `output`
+### output
 
 ```js
 terminal.output('I like vanilla.');
@@ -85,7 +85,7 @@ I like vanilla.
 >
 ```
 
-### `prompt`
+### prompt
 
 ```js
 terminal.prompt('Type your name', (name) => {
@@ -99,7 +99,7 @@ Hi javi!
 >
 ```
 
-### `onInput`
+### onInput
 
 ```js
 terminal.onInput((command, parameters) => {
@@ -107,7 +107,7 @@ terminal.onInput((command, parameters) => {
 });
 ```
 
-### `setPrompt`
+### setPrompt
 
 ```js
 terminal.setPrompt('soyjavi @ moon');
