@@ -30,14 +30,20 @@
             terminal.setPrompt('@soyjavi <small>❤️</small> <u>vanilla</u> ');
           },
         },
+
         // welcome: 'Welcome...',
         // prompt: 'soyjavi at <u>Macbook-Pro</u> ',
         // separator: '$',
       });
 
-      term.onInput((value, parameters) => {
-        console.log('⚡️onInput', value, parameters);
-      })
+      term.onInput((command, parameters) => {
+        console.log('⚡️onInput', command, parameters);
+      });
+
+      term.prompt('Your name', (name) => {
+        term.output(`Hi ${name}!`);
+        term.setPrompt(`${name} `);
+      });
     </script>
   </body>
 </html>

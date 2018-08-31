@@ -43,7 +43,6 @@
     }
 
     .VanillaTerm .prompt {
-      color: #f3e5ab;
       line-height: 1.25em;
       margin-right: 0.5em;
     }
@@ -51,6 +50,11 @@
     .VanillaTerm .command {
       display: flex;
     }
+
+      .VanillaTerm .command.input .prompt {
+        color: white;
+        font-weight: normal;
+      }
 
       .VanillaTerm .command.hidden .prompt {
         display: none;

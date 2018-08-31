@@ -45,6 +45,13 @@ describe('VanillaTerminal', () => {
     expect(document.querySelector('output span:last-child').innerHTML).toEqual('Hello World');
   });
 
+  it('when prompt()', () => {
+    const term = new VanillaTerminal();
+
+    term.prompt('Your name');
+    expect(document.querySelector('.command .prompt').innerHTML).toEqual('Your name:');
+  });
+
   it('when setPrompt()', () => {
     const term = new VanillaTerminal();
 

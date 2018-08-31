@@ -66,6 +66,57 @@ There is only one flavour for your favorite🍦and it is vanilla.
 @soyjavi ❤️ vanilla >
 ```
 
+## Methods
+
+### `clear`
+
+```js
+terminal.clear();
+```
+
+### `output`
+
+```js
+terminal.output('I like vanilla.');
+```
+
+```bash
+I like vanilla.
+>
+```
+
+### `prompt`
+
+```js
+terminal.prompt('Type your name', (name) => {
+  terminal.output(`Hi ${name}!`);
+});
+```
+
+```bash
+Type your name: javi
+Hi javi!
+>
+```
+
+### `onInput`
+
+```js
+terminal.onInput((command, parameters) => {
+  console.log('⚡️onInput', command, parameters);
+});
+```
+
+### `setPrompt`
+
+```js
+terminal.setPrompt('soyjavi @ moon');
+```
+
+```bash
+soyjavi @ moon >
+```
+
 ## License
 
 Copyright (c) 2018 Javier Jimenez Villar

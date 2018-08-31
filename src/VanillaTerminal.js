@@ -18,8 +18,7 @@ class Terminal {
     this.history = localStorage[KEY] ? JSON.parse(localStorage[KEY]) : [];
     this.historyCursor = this.history.length;
     this.welcome = welcome;
-    this.prompt = prompt;
-    this.separator = separator;
+    this.shell = { prompt, separator };
 
     const el = document.getElementById(container);
     if (el) {
@@ -28,6 +27,10 @@ class Terminal {
       if (welcome) this.output(welcome);
     } else throw Error(`Container #${container} doesn't exists.`);
   }
+
+  state = {
+    prompt: undefined,
+  };
 
   cacheDOM = (el) => {
     el.classList.add(KEY);
@@ -81,10 +84,20 @@ class Terminal {
 
   onKeyDown = ({ keyCode }) => {
     const {
-      commands = {}, DOM, history, onInputCallback,
+      commands = {}, DOM, history, onInputCallback, state,
     } = this;
     const commandLine = DOM.input.value.trim();
     if (keyCode !== 13 || !commandLine) return;
+
+    const [command, ...parameters] = commandLine.split(' ');
+
+    if (state.prompt) {
+      state.prompt = false;
+      this.onAskCallback(command);
+      this.setPrompt();
+      this.resetCommand();
+      return;
+    }
 
     // Save command line in history
     history.push(commandLine);
@@ -99,7 +112,6 @@ class Terminal {
     DOM.input.value = '';
 
     // Dispatch command
-    const [command, ...parameters] = commandLine.split(' ');
     if (Object.keys(commands).includes(command)) {
       const callback = commands[command];
       if (callback) callback(this, parameters);
@@ -113,6 +125,7 @@ class Terminal {
     const { DOM } = this;
 
     DOM.input.value = '';
+    DOM.command.classList.remove('input');
     DOM.command.classList.remove('hidden');
     if (DOM.input.scrollIntoView) DOM.input.scrollIntoView();
   }
@@ -121,6 +134,14 @@ class Terminal {
   clear() {
     this.DOM.output.innerHTML = '';
     this.resetCommand();
+  }
+
+  prompt(prompt, callback = () => {}) {
+    this.state.prompt = true;
+    this.onAskCallback = callback;
+    this.DOM.prompt.innerHTML = `${prompt}:`;
+    this.resetCommand();
+    this.DOM.command.classList.add('input');
   }
 
   onInput(callback) {
@@ -132,10 +153,10 @@ class Terminal {
     this.resetCommand();
   }
 
-  setPrompt(prompt) {
-    const { DOM, separator } = this;
+  setPrompt(prompt = this.shell.prompt) {
+    const { DOM, shell: { separator } } = this;
 
-    this.prompt = prompt;
+    this.shell = { prompt, separator };
     DOM.prompt.innerHTML = `${prompt}${separator}`;
   }
 }

@@ -1,4 +1,4 @@
-export default ({ prompt, separator }) => (`
+export default ({ shell: { prompt, separator } }) => (`
   <div class="container">
     <output></output>
     <div class="command">

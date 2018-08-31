@@ -20,9 +20,13 @@ export default {
   version: terminal => terminal.output(`Vanilla Terminal v${PKG.version}`),
 
   wipe: (terminal) => {
-    localStorage.removeItem(KEY);
-    terminal.history = []; // eslint-disable-line
-    terminal.historyCursor = 0; // eslint-disable-line
-    terminal.output('History of commands wiped.');
+    terminal.prompt('Are you sure remove all your commands history? Y/N', (value) => {
+      if (value.trim().toUpperCase() === 'Y') {
+        localStorage.removeItem(KEY);
+        terminal.history = []; // eslint-disable-line
+        terminal.historyCursor = 0; // eslint-disable-line
+        terminal.output('History of commands wiped.');
+      }
+    });
   },
 };
