@@ -117,7 +117,7 @@ class Terminal {
       if (callback) callback(this, parameters);
       if (onInputCallback) onInputCallback(command, parameters);
     } else {
-      this.output(`<u>${command}</u>: command not found.`);
+      this.output(`<u>${command}</u>: command not found. XBIN MOD`);
     }
   }
 
