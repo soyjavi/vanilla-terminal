@@ -56,6 +56,10 @@
         font-weight: normal;
       }
 
+      .VanillaTerm .command.idle .input {
+        display: none;
+      }
+
       .VanillaTerm .command.hidden .prompt {
         display: none;
       }
@@ -74,3 +78,25 @@
         outline: none;
         padding: 0;
       }
+
+      .VanillaTerm .command .spinner:before {
+        display: inline-block;
+        content: '⠋';
+        animation: spin 1s linear infinite;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+
+
+@keyframes spin {
+   0% { content: '⠋' }
+  10% { content: '⠙' }
+  20% { content: '⠹' }
+  30% { content: '⠸' }
+  40% { content: '⠼' }
+  50% { content: '⠴' }
+  60% { content: '⠦' }
+  70% { content: '⠧' }
+  80% { content: '⠇' }
+  90% { content: '⠏' }
+}

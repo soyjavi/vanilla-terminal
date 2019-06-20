@@ -30,6 +30,7 @@ class Terminal {
 
   state = {
     prompt: undefined,
+    idle: undefined,
   };
 
   cacheDOM = (el) => {
@@ -136,6 +137,13 @@ class Terminal {
     this.resetCommand();
   }
 
+  idle() {
+    const { DOM } = this;
+
+    DOM.command.classList.add('idle');
+    DOM.prompt.innerHTML = '<div class="spinner"></div>';
+  }
+
   prompt(prompt, callback = () => {}) {
     this.state.prompt = true;
     this.onAskCallback = callback;
@@ -157,7 +165,9 @@ class Terminal {
     const { DOM, shell: { separator } } = this;
 
     this.shell = { prompt, separator };
+    DOM.command.classList.remove('idle');
     DOM.prompt.innerHTML = `${prompt}${separator}`;
+    DOM.input.focus();
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "vanilla-terminal",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "🍦A simple and lightweight Javascript web browser terminal",
   "keywords": [
     "terminal",

@@ -29,11 +29,21 @@
             terminal.output('There is only one flavour for your favorite🍦and it is <b>vanilla<b>.')
             terminal.setPrompt('@soyjavi <small>❤️</small> <u>vanilla</u> ');
           },
+
+          async: (terminal) => {
+            terminal.idle();
+            setTimeout(() => terminal.output('Async 300'), 300);
+            setTimeout(() => terminal.output('Async 1300'), 1300);
+            setTimeout(() => {
+              terminal.output('Async 2000');
+              terminal.setPrompt();
+            }, 2000);
+          },
         },
 
         // welcome: 'Welcome...',
         // prompt: 'soyjavi at <u>Macbook-Pro</u> ',
-        // separator: '$',
+        separator: '$',
       });
 
       term.onInput((command, parameters) => {

@@ -28,6 +28,13 @@ describe('VanillaTerminal', () => {
     expect(document.querySelector('output').innerHTML).toEqual('');
   });
 
+  it('when idle()', () => {
+    const term = new VanillaTerminal();
+
+    term.idle();
+    expect(document.querySelector('.command .prompt').innerHTML).toEqual('<div class="spinner"></div>');
+  });
+
   it('when onInput()', () => {
     const mockCallback = jest.fn();
     const term = new VanillaTerminal();
